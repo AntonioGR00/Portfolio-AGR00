@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Portafolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="nav">
+      <h1 class="logo">TuNombre</h1>
+      <ul class="nav-links">
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#skills">Habilidades</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Hola, soy <span>TuNombre</span></h2>
+    <p>Desarrollador Web / Software / Diseñador</p>
+    <a href="#projects" class="btn">Ver proyectos</a>
+  </section>
+
+  <!-- SOBRE MI -->
+  <section id="about" class="section">
+    <h2>Sobre mí</h2>
+    <p>
+      Breve descripción sobre ti, tu experiencia, qué haces y qué te apasiona.
+    </p>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="projects" class="section">
+    <h2>Proyectos</h2>
+    <div class="projects-grid">
+      <article class="project-card">
+        <h3>Proyecto 1</h3>
+        <p>Descripción breve del proyecto.</p>
+      </article>
+      <article class="project-card">
+        <h3>Proyecto 2</h3>
+        <p>Descripción breve del proyecto.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section id="skills" class="section">
+    <h2>Habilidades</h2>
+    <ul class="skills-list">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Kotlin</li>
+      <li>SQL</li>
+    </ul>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contact" class="section">
+    <h2>Contacto</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Nombre" required />
+      <input type="email" placeholder="Email" required />
+      <textarea placeholder="Mensaje"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 TuNombre. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
