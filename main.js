@@ -38,7 +38,7 @@ const translations = {
     },
     hero: {
       greeting: "Hola, soy",
-      subtitle: "Desarrollador Web / Software / Diseñador"
+      subtitle: "Desarrollador Aplicaciones Multiplataforma / Web / Software / Diseñador"
     },
     projects: {
       title: "Proyectos & Empresas",
@@ -95,7 +95,7 @@ const translations = {
     },
     hero: {
       greeting: "Hi, I'm",
-      subtitle: "Web / Software Developer / Designer"
+      subtitle: "Multiplatform App / Web / Software Developer / Designer"
     },
     projects: {
       title: "Projects & Companies",
