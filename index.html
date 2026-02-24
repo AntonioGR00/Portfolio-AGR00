@@ -16,11 +16,10 @@
     </nav>
   </header>
 
-  <!-- CONTENEDOR PRINCIPAL CON 3 PÁGINAS -->
-  <div class="portfolio-container">
-    
+  <!-- CONTENEDOR PRINCIPAL CON LAYOUT LIBRO -->
+  <div class="book-container">
     <!-- PÁGINA 1: INFORMACIÓN PERSONAL -->
-    <section class="page page-1 active" id="page1">
+    <section class="page page-1" id="page1">
       <section class="info-personal">
         <h2>Sobre mí</h2>
         <div class="profile-section">
@@ -51,7 +50,7 @@
     </section>
 
     <!-- PÁGINA 2: EMPRESAS Y CONTACTO -->
-    <section class="page page-2" id="page2">
+    <section class="page page-2 active" id="page2">
       <section class="hero-center">
         <h2>Hola, soy <span>Antonio Gross Rivero</span></h2>
         <p>Desarrollador Web / Software / Diseñador</p>
@@ -121,11 +120,20 @@
 
   </div>
 
-  <!-- BOTONES DE NAVEGACIÓN -->
-  <div class="nav-buttons">
-    <button id="prevBtn" class="nav-btn nav-btn-left">←</button>
-    <button id="nextBtn" class="nav-btn nav-btn-right">→</button>
+    <button id="nextBtn" class="nav-btn nav-btn-right">
+      <span class="arrow">→</span>
+      <span class="label">Siguiente</span>
+    </button>
   </div>
+
+  <!-- BOTONES DE NAVEGACIÓN - LAYOUT LIBRO -->
+  <div class="book-layout">
+    <button id="prevBtn" class="nav-btn nav-btn-left">
+      <span class="arrow">←</span>
+      <span class="label">Anterior</span>
+    </button>
+    
+    <div class="portfolio-container">
 
   <!-- FOOTER -->
   <footer class="footer">

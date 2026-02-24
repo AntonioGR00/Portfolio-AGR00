@@ -1,5 +1,5 @@
 // Estado de navegación
-let currentPage = 1;
+let currentPage = 2; // Página inicial: 2 (centro)
 
 // Elementos del DOM
 const prevBtn = document.getElementById("prevBtn");
