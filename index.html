@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mi Portafolio</title>
   <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
 
   <!-- HEADER -->
   <header class="header">
     <nav class="nav">
-      <h1 class="logo">TuNombre</h1>
+      <h1 class="logo">Antonio Gross Rivero</h1>
       <ul class="nav-links">
         <li><a href="#about">Sobre mí</a></li>
         <li><a href="#projects">Proyectos</a></li>
@@ -23,7 +24,7 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h2>Hola, soy <span>TuNombre</span></h2>
+    <h2>Hola, soy <span>Antonio Gross Rivero</span></h2>
     <p>Desarrollador Web / Software / Diseñador</p>
     <a href="#projects" class="btn">Ver proyectos</a>
   </section>
@@ -57,6 +58,10 @@
     <ul class="skills-list">
       <li>HTML</li>
       <li>CSS</li>
+      <li>Python</li>
+      <li>Django</li>
+      <li>C#</li>
+      <li>Java</li>
       <li>JavaScript</li>
       <li>Kotlin</li>
       <li>SQL</li>
@@ -66,18 +71,65 @@
   <!-- CONTACTO -->
   <section id="contact" class="section">
     <h2>Contacto</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Nombre" required />
-      <input type="email" placeholder="Email" required />
-      <textarea placeholder="Mensaje"></textarea>
+    <form class="contact-form" id="contactForm">
+      <input type="text" id="name" placeholder="Nombre" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <textarea id="message" placeholder="Mensaje" required></textarea>
       <button type="submit">Enviar</button>
     </form>
+    <p id="formStatus"></p>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2026 TuNombre. Todos los derechos reservados.</p>
+    <p>© 2026 AGR00. Todos los derechos reservados.</p>
   </footer>
 
+  <script>
+    emailjs.init("MbnpcM3OeBN-ik_v8");
+
+    const form = document.getElementById("contactForm");
+    const statusMsg = document.getElementById("formStatus");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      // Email 1: Mensaje a ti
+      const emailToAntonio = emailjs.send("service_18r81hu", "template_2qejkar", {
+        from_name: name,
+        from_email: email,
+        message: message
+      });
+
+      // Email 2: Autoreply al usuario
+      const emailToUser = emailjs.send("service_18r81hu", "template_jt9nevb", {
+        name: name,
+        email: email,
+        message: message,
+        to_email: email
+      });
+
+      // Espera a que ambos se envíen
+      Promise.all([emailToAntonio, emailToUser]).then(
+        function (response) {
+          statusMsg.textContent = "¡Mensaje enviado exitosamente!";
+          statusMsg.style.color = "green";
+          form.reset();
+          setTimeout(() => {
+            statusMsg.textContent = "";
+          }, 3000);
+        },
+        function (error) {
+          statusMsg.textContent = "Error al enviar el mensaje. Intenta de nuevo.";
+          statusMsg.style.color = "red";
+          console.error("Error:", error);
+        }
+      );
+    });
+  </script>
 </body>
 </html>
