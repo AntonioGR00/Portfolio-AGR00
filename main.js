@@ -4,8 +4,16 @@ let currentPage = 2; // Página inicial: 2 (centro)
 // Elementos del DOM
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
+const prevLabel = prevBtn ? prevBtn.querySelector(".label") : null;
+const nextLabel = nextBtn ? nextBtn.querySelector(".label") : null;
 const contactForm = document.getElementById("contactForm");
 const statusMsg = document.getElementById("formStatus");
+
+const pageNames = {
+  1: "Información personal",
+  2: "Proyectos y contacto",
+  3: "Creación de contenido"
+};
 
 // Función para cambiar de página
 function changePage(pageNum) {
@@ -26,6 +34,21 @@ function changePage(pageNum) {
   // Actualizar estado de los botones
   prevBtn.disabled = pageNum === 1;
   nextBtn.disabled = pageNum === 3;
+
+  // Actualizar textos y accesibilidad según destino real
+  const prevDestination = pageNames[pageNum - 1] || pageNames[1];
+  const nextDestination = pageNames[pageNum + 1] || pageNames[3];
+
+  if (prevLabel) {
+    prevLabel.textContent = prevDestination;
+  }
+
+  if (nextLabel) {
+    nextLabel.textContent = nextDestination;
+  }
+
+  prevBtn.setAttribute("aria-label", `Ir a ${prevDestination}`);
+  nextBtn.setAttribute("aria-label", `Ir a ${nextDestination}`);
 }
 
 // Event listeners para botones de navegación
