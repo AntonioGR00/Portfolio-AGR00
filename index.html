@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mi Portafolio</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231e293b' width='100' height='100'/><text x='50' y='75' font-size='80' font-weight='bold' fill='%2338bdf8' text-anchor='middle'>A</text></svg>" />
   <link rel="stylesheet" href="styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
@@ -13,6 +14,13 @@
   <header class="header">
     <nav class="nav">
       <h1 class="logo">Antonio Gross Rivero</h1>
+      <div class="language-switch">
+        <label for="languageSelect">🌐</label>
+        <select id="languageSelect" aria-label="Seleccionar idioma">
+          <option value="es">ES</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
     </nav>
   </header>
 
@@ -20,30 +28,30 @@
   <div class="book-layout">
     <button id="prevBtn" class="nav-btn nav-btn-left" aria-label="Ir a Información personal">
       <span class="arrow">←</span>
-      <span class="label">Información personal</span>
+      <span class="label" data-i18n="nav.personal">Información personal</span>
     </button>
 
     <div class="portfolio-container">
       <!-- PÁGINA 1: INFORMACIÓN PERSONAL -->
       <section class="page page-1" id="page1">
         <section class="info-personal">
-          <h2>Sobre mí</h2>
+          <h2 data-i18n="about.title">Sobre mí</h2>
           <div class="profile-section">
-            <h3>Información Personal</h3>
-            <p><strong>Nombre:</strong> Antonio Gross Rivero</p>
-            <p><strong>Profesión:</strong> Desarrollador Aplicaciones Multiplataforma / Web / Software / Diseñador</p>
-            <p><strong>Ubicación:</strong> Cádiz, Andalucía, España</p>
+            <h3 data-i18n="about.personalInfo">Información Personal</h3>
+            <p><strong data-i18n="about.nameLabel">Nombre:</strong> Antonio Gross Rivero</p>
+            <p><strong data-i18n="about.roleLabel">Profesión:</strong> <span data-i18n="about.roleValue">Desarrollador Aplicaciones Multiplataforma / Web / Software / Diseñador</span></p>
+            <p><strong data-i18n="about.locationLabel">Ubicación:</strong> <span data-i18n="about.locationValue">Cádiz, Andalucía, España</span></p>
             <p><strong>Email:</strong> antoniogross18@gmail.com</p>
           </div>
           <div class="profile-section">
-            <h3>Biografía</h3>
-            <p>¡Hola! Soy Antonio Gross Rivero, desarrollador freelance de software, actualmente enfocado en seguir creciendo profesionalmente mientras construyo proyectos propios y colaboro en soluciones digitales a medida.<br><br>
+            <h3 data-i18n="about.bioTitle">Biografía</h3>
+            <p data-i18n-html="about.bioText">¡Hola! Soy Antonio Gross Rivero, desarrollador freelance de software, actualmente enfocado en seguir creciendo profesionalmente mientras construyo proyectos propios y colaboro en soluciones digitales a medida.<br><br>
             En los últimos meses he centrado mi trabajo en reforzar mis habilidades técnicas, desarrollar aplicaciones reales y crear contenido educativo sobre programación, donde comparto conocimientos, procesos y aprendizajes de forma constante.<br><br>
             Me apasiona crear productos funcionales, bien estructurados y pensados para aportar valor real, combinando desarrollo, aprendizaje continuo y divulgación técnica.<br><br>
             <strong>¡Nunca dejes de programar!</strong></p>
           </div>
           <div class="profile-section">
-            <h3>Habilidades</h3>
+            <h3 data-i18n="about.skillsTitle">Habilidades</h3>
             <ul class="skills-list">
               <li>HTML / CSS</li>
               <li>JavaScript</li>
@@ -61,35 +69,35 @@
       <!-- PÁGINA 2: EMPRESAS Y CONTACTO -->
       <section class="page page-2 active" id="page2">
         <section class="hero-center">
-          <h2>Hola, soy <span>Antonio Gross Rivero</span></h2>
-          <p>Desarrollador Web / Software / Diseñador</p>
+          <h2><span data-i18n="hero.greeting">Hola, soy</span> <span>Antonio Gross Rivero</span></h2>
+          <p data-i18n="hero.subtitle">Desarrollador Web / Software / Diseñador</p>
         </section>
 
         <section class="projects-section">
-          <h2>Proyectos & Empresas</h2>
+          <h2 data-i18n="projects.title">Proyectos & Empresas</h2>
           <div class="projects-grid">
             <article class="project-card">
-              <h3>Proyecto 1</h3>
-              <p>Descripción breve del proyecto.</p>
+              <h3 data-i18n="projects.project1Title">Proyecto 1</h3>
+              <p data-i18n="projects.projectDesc">Descripción breve del proyecto.</p>
             </article>
             <article class="project-card">
-              <h3>Proyecto 2</h3>
-              <p>Descripción breve del proyecto.</p>
+              <h3 data-i18n="projects.project2Title">Proyecto 2</h3>
+              <p data-i18n="projects.projectDesc">Descripción breve del proyecto.</p>
             </article>
             <article class="project-card">
-              <h3>Proyecto 3</h3>
-              <p>Descripción breve del proyecto.</p>
+              <h3 data-i18n="projects.project3Title">Proyecto 3</h3>
+              <p data-i18n="projects.projectDesc">Descripción breve del proyecto.</p>
             </article>
           </div>
         </section>
 
         <section class="contact-section">
-          <h2>Contacto</h2>
+          <h2 data-i18n="contact.title">Contacto</h2>
           <form class="contact-form" id="contactForm">
-            <input type="text" id="name" placeholder="Nombre" required />
-            <input type="email" id="email" placeholder="Email" required />
-            <textarea id="message" placeholder="Mensaje" required></textarea>
-            <button type="submit">Enviar</button>
+            <input type="text" id="name" data-i18n-placeholder="contact.namePlaceholder" placeholder="Nombre" required />
+            <input type="email" id="email" data-i18n-placeholder="contact.emailPlaceholder" placeholder="Email" required />
+            <textarea id="message" data-i18n-placeholder="contact.messagePlaceholder" placeholder="Mensaje" required></textarea>
+            <button type="submit" data-i18n="contact.submit">Enviar</button>
           </form>
           <p id="formStatus"></p>
         </section>
@@ -98,17 +106,17 @@
       <!-- PÁGINA 3: CREACIÓN DE CONTENIDO -->
       <section class="page page-3" id="page3">
         <section class="content-creation">
-          <h2>Contenido de Programación</h2>
+          <h2 data-i18n="content.title">Contenido de Programación</h2>
           <div class="content-section">
-            <h3>Blog & Artículos</h3>
+            <h3 data-i18n="content.blogTitle">Videos del canal</h3>
             <ul>
-              <li><a href="#">Artículo 1: Tutorial React</a></li>
-              <li><a href="#">Artículo 2: Python Avanzado</a></li>
-              <li><a href="#">Artículo 3: Web Development</a></li>
+              <li><a href="#" data-i18n="content.article1">Video: Tutorial React</a></li>
+              <li><a href="#" data-i18n="content.article2">Video: Python Avanzado</a></li>
+              <li><a href="#" data-i18n="content.article3">Video: Web Development</a></li>
             </ul>
           </div>
           <div class="content-section">
-            <h3>Redes Sociales</h3>
+            <h3 data-i18n="content.socialTitle">Redes Sociales</h3>
             <ul>
               <li><a href="#">GitHub</a></li>
               <li><a href="#">LinkedIn</a></li>
@@ -117,11 +125,11 @@
             </ul>
           </div>
           <div class="content-section">
-            <h3>Recursos</h3>
+            <h3 data-i18n="content.resourcesTitle">Recursos</h3>
             <ul>
-              <li><a href="#">Documentación</a></li>
-              <li><a href="#">Código en GitHub</a></li>
-              <li><a href="#">Portafolio Adicional</a></li>
+              <li><a href="#" data-i18n="content.resource1">Documentación</a></li>
+              <li><a href="#" data-i18n="content.resource2">Código en GitHub</a></li>
+              <li><a href="#" data-i18n="content.resource3">Portafolio Adicional</a></li>
             </ul>
           </div>
         </section>
@@ -129,14 +137,14 @@
     </div>
 
     <button id="nextBtn" class="nav-btn nav-btn-right" aria-label="Ir a Creación de contenido">
-      <span class="label">Creación de contenido</span>
+      <span class="label" data-i18n="nav.content">Creación de contenido</span>
       <span class="arrow">→</span>
     </button>
   </div>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2026 AGR00. Todos los derechos reservados.</p>
+    <p data-i18n="footer.rights">© 2026 AGR00. Todos los derechos reservados.</p>
   </footer>
 
   <script src="main.js"></script>

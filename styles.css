@@ -22,13 +22,33 @@ body {
 
 .nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
 .logo {
   font-size: 1.5rem;
   color: #38bdf8;
+}
+
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.language-switch label {
+  font-size: 1rem;
+}
+
+#languageSelect {
+  background: #1e293b;
+  color: #e5e7eb;
+  border: 1px solid #38bdf8;
+  border-radius: 6px;
+  padding: 0.35rem 0.55rem;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 /* CONTENEDOR PRINCIPAL - LAYOUT LIBRO */
@@ -319,6 +339,11 @@ body {
 }
 
 @media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
   .book-layout {
     flex-direction: column;
     gap: 1.5rem;
