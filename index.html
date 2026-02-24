@@ -13,123 +13,125 @@
   <header class="header">
     <nav class="nav">
       <h1 class="logo">Antonio Gross Rivero</h1>
-      <ul class="nav-links">
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#skills">Habilidades</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
     </nav>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h2>Hola, soy <span>Antonio Gross Rivero</span></h2>
-    <p>Desarrollador Web / Software / Diseñador</p>
-    <a href="#projects" class="btn">Ver proyectos</a>
-  </section>
+  <!-- CONTENEDOR PRINCIPAL CON 3 PÁGINAS -->
+  <div class="portfolio-container">
+    
+    <!-- PÁGINA 1: INFORMACIÓN PERSONAL -->
+    <section class="page page-1 active" id="page1">
+      <section class="info-personal">
+        <h2>Sobre mí</h2>
+        <div class="profile-section">
+          <h3>Información Personal</h3>
+          <p><strong>Nombre:</strong> Antonio Gross Rivero</p>
+          <p><strong>Profesión:</strong> Desarrollador Web / Software / Diseñador</p>
+          <p><strong>Ubicación:</strong> [Tu ubicación]</p>
+          <p><strong>Email:</strong> antoniogross18@gmail.com</p>
+        </div>
+        <div class="profile-section">
+          <h3>Biografía</h3>
+          <p>Breve descripción sobre ti, tu experiencia, qué haces y qué te apasiona.</p>
+        </div>
+        <div class="profile-section">
+          <h3>Habilidades</h3>
+          <ul class="skills-list">
+            <li>HTML / CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Django</li>
+            <li>C#</li>
+            <li>Java</li>
+            <li>Kotlin</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+      </section>
+    </section>
 
-  <!-- SOBRE MI -->
-  <section id="about" class="section">
-    <h2>Sobre mí</h2>
-    <p>
-      Breve descripción sobre ti, tu experiencia, qué haces y qué te apasiona.
-    </p>
-  </section>
+    <!-- PÁGINA 2: EMPRESAS Y CONTACTO -->
+    <section class="page page-2" id="page2">
+      <section class="hero-center">
+        <h2>Hola, soy <span>Antonio Gross Rivero</span></h2>
+        <p>Desarrollador Web / Software / Diseñador</p>
+      </section>
 
-  <!-- PROYECTOS -->
-  <section id="projects" class="section">
-    <h2>Proyectos</h2>
-    <div class="projects-grid">
-      <article class="project-card">
-        <h3>Proyecto 1</h3>
-        <p>Descripción breve del proyecto.</p>
-      </article>
-      <article class="project-card">
-        <h3>Proyecto 2</h3>
-        <p>Descripción breve del proyecto.</p>
-      </article>
-    </div>
-  </section>
+      <section class="projects-section">
+        <h2>Proyectos & Empresas</h2>
+        <div class="projects-grid">
+          <article class="project-card">
+            <h3>Proyecto 1</h3>
+            <p>Descripción breve del proyecto.</p>
+          </article>
+          <article class="project-card">
+            <h3>Proyecto 2</h3>
+            <p>Descripción breve del proyecto.</p>
+          </article>
+          <article class="project-card">
+            <h3>Proyecto 3</h3>
+            <p>Descripción breve del proyecto.</p>
+          </article>
+        </div>
+      </section>
 
-  <!-- HABILIDADES -->
-  <section id="skills" class="section">
-    <h2>Habilidades</h2>
-    <ul class="skills-list">
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>Python</li>
-      <li>Django</li>
-      <li>C#</li>
-      <li>Java</li>
-      <li>JavaScript</li>
-      <li>Kotlin</li>
-      <li>SQL</li>
-    </ul>
-  </section>
+      <section class="contact-section">
+        <h2>Contacto</h2>
+        <form class="contact-form" id="contactForm">
+          <input type="text" id="name" placeholder="Nombre" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <textarea id="message" placeholder="Mensaje" required></textarea>
+          <button type="submit">Enviar</button>
+        </form>
+        <p id="formStatus"></p>
+      </section>
+    </section>
 
-  <!-- CONTACTO -->
-  <section id="contact" class="section">
-    <h2>Contacto</h2>
-    <form class="contact-form" id="contactForm">
-      <input type="text" id="name" placeholder="Nombre" required />
-      <input type="email" id="email" placeholder="Email" required />
-      <textarea id="message" placeholder="Mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-    <p id="formStatus"></p>
-  </section>
+    <!-- PÁGINA 3: CREACIÓN DE CONTENIDO -->
+    <section class="page page-3" id="page3">
+      <section class="content-creation">
+        <h2>Contenido de Programación</h2>
+        <div class="content-section">
+          <h3>Blog & Artículos</h3>
+          <ul>
+            <li><a href="#">Artículo 1: Tutorial React</a></li>
+            <li><a href="#">Artículo 2: Python Avanzado</a></li>
+            <li><a href="#">Artículo 3: Web Development</a></li>
+          </ul>
+        </div>
+        <div class="content-section">
+          <h3>Redes Sociales</h3>
+          <ul>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+        <div class="content-section">
+          <h3>Recursos</h3>
+          <ul>
+            <li><a href="#">Documentación</a></li>
+            <li><a href="#">Código en GitHub</a></li>
+            <li><a href="#">Portafolio Adicional</a></li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+  </div>
+
+  <!-- BOTONES DE NAVEGACIÓN -->
+  <div class="nav-buttons">
+    <button id="prevBtn" class="nav-btn nav-btn-left">←</button>
+    <button id="nextBtn" class="nav-btn nav-btn-right">→</button>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
     <p>© 2026 AGR00. Todos los derechos reservados.</p>
   </footer>
 
-  <script>
-    emailjs.init("MbnpcM3OeBN-ik_v8");
-
-    const form = document.getElementById("contactForm");
-    const statusMsg = document.getElementById("formStatus");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
-
-      // Email 1: Mensaje a ti
-      const emailToAntonio = emailjs.send("service_18r81hu", "template_2qejkar", {
-        from_name: name,
-        from_email: email,
-        message: message
-      });
-
-      // Email 2: Autoreply al usuario
-      const emailToUser = emailjs.send("service_18r81hu", "template_jt9nevb", {
-        name: name,
-        email: email,
-        message: message,
-        to_email: email
-      });
-
-      // Espera a que ambos se envíen
-      Promise.all([emailToAntonio, emailToUser]).then(
-        function (response) {
-          statusMsg.textContent = "¡Mensaje enviado exitosamente!";
-          statusMsg.style.color = "green";
-          form.reset();
-          setTimeout(() => {
-            statusMsg.textContent = "";
-          }, 3000);
-        },
-        function (error) {
-          statusMsg.textContent = "Error al enviar el mensaje. Intenta de nuevo.";
-          statusMsg.style.color = "red";
-          console.error("Error:", error);
-        }
-      );
-    });
-  </script>
+  <script src="main.js" type="module"></script>
 </body>
 </html>
