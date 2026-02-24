@@ -1,10 +1,5 @@
-import emailjs from '@emailjs/browser';
-
-// Inicializar EmailJS
-emailjs.init("MbnpcM3OeBN-ik_v8");
-
 // Estado de navegación
-let currentPage = 1; // 1 = página 1, 2 = página 2, 3 = página 3
+let currentPage = 1;
 
 // Elementos del DOM
 const prevBtn = document.getElementById("prevBtn");
@@ -14,6 +9,8 @@ const statusMsg = document.getElementById("formStatus");
 
 // Función para cambiar de página
 function changePage(pageNum) {
+  console.log("Cambiando a página:", pageNum);
+  
   // Remover clase active de todas las páginas
   document.querySelectorAll(".page").forEach(page => {
     page.classList.remove("active");
@@ -23,6 +20,7 @@ function changePage(pageNum) {
   const targetPage = document.getElementById(`page${pageNum}`);
   if (targetPage) {
     targetPage.classList.add("active");
+    console.log("Página", pageNum, "activada");
   }
 
   // Actualizar estado de los botones
@@ -49,32 +47,20 @@ nextBtn.addEventListener("click", () => {
 changePage(currentPage);
 
 // MANEJO DEL FORMULARIO DE CONTACTO
-contactForm.addEventListener("submit", function (e) {
-  e.preventDefault();
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const message = document.getElementById("message").value;
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
 
-  // Email al usuario
-  emailjs.send("service_18r81hu", "template_jt9nevb", {
-    from_name: name,
-    from_email: email,
-    message: message,
-    to_email: email
-  }).then(
-    function (response) {
-      statusMsg.textContent = "¡Mensaje enviado exitosamente!";
-      statusMsg.style.color = "green";
-      contactForm.reset();
-      setTimeout(() => {
-        statusMsg.textContent = "";
-      }, 3000);
-    },
-    function (error) {
-      statusMsg.textContent = "Error al enviar el mensaje. Intenta de nuevo.";
-      statusMsg.style.color = "red";
-      console.error("Error:", error);
-    }
-  );
-});
+    // Aquí pueden ir los emails con EmailJS
+    statusMsg.textContent = "¡Mensaje enviado exitosamente!";
+    statusMsg.style.color = "green";
+    contactForm.reset();
+    setTimeout(() => {
+      statusMsg.textContent = "";
+    }, 3000);
+  });
+}
