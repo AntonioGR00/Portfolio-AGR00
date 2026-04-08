@@ -6,7 +6,6 @@
   <title>Mi Portafolio</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231e293b' width='100' height='100'/><text x='50' y='75' font-size='80' font-weight='bold' fill='%2338bdf8' text-anchor='middle'>A</text></svg>" />
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -42,6 +41,7 @@
             <p><strong data-i18n="about.roleLabel">Profesión:</strong> <span data-i18n="about.roleValue">Desarrollador Aplicaciones Multiplataforma / Web / Software / Diseñador</span></p>
             <p><strong data-i18n="about.locationLabel">Ubicación:</strong> <span data-i18n="about.locationValue">Cádiz, Andalucía, España</span></p>
             <p><strong>Email:</strong> antoniogross18@gmail.com</p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/AntonioGR00" target="_blank" rel="noopener noreferrer">github.com/AntonioGR00</a></p>
           </div>
           <div class="profile-section">
             <h3 data-i18n="about.bioTitle">Biografía</h3>
@@ -77,22 +77,27 @@
           <h2 data-i18n="projects.title">Proyectos & Empresas</h2>
           <div class="projects-grid">
             <article class="project-card">
-              <h3 data-i18n="projects.project1Title">Proyecto 1</h3>
-              <p data-i18n="projects.projectDesc">Descripción breve del proyecto.</p>
+              <h3 data-i18n="projects.project1Title">TaskManager</h3>
+              <p data-i18n="projects.project1Desc">App Android minimalista para gestionar tareas con CRUD, SQLite y recordatorios inteligentes.</p>
+              <a href="https://github.com/AntonioGR00/TaskManager-Gestor-de-tareas" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
             </article>
             <article class="project-card">
-              <h3 data-i18n="projects.project2Title">Proyecto 2</h3>
-              <p data-i18n="projects.projectDesc">Descripción breve del proyecto.</p>
+              <h3 data-i18n="projects.project2Title">Learning</h3>
+              <p data-i18n="projects.project2Desc">Plataforma escolar full-stack con Next.js, NestJS, Prisma, PostgreSQL y mensajería en tiempo real.</p>
+              <a href="https://github.com/AntonioGR00/Learning" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
             </article>
             <article class="project-card">
-              <h3 data-i18n="projects.project3Title">Proyecto 3</h3>
-              <p data-i18n="projects.projectDesc">Descripción breve del proyecto.</p>
+              <h3 data-i18n="projects.project3Title">PubtoGo</h3>
+              <p data-i18n="projects.project3Desc">Proyecto orientado a servicios y experiencias digitales, disponible en tu perfil de GitHub.</p>
+              <a href="https://github.com/AntonioGR00/PubtoGo" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
             </article>
           </div>
+          <a class="github-profile-btn" href="https://github.com/AntonioGR00" target="_blank" rel="noopener noreferrer" data-i18n="projects.viewAllGithub">Ver todos en GitHub</a>
         </section>
 
         <section class="contact-section">
           <h2 data-i18n="contact.title">Contacto</h2>
+          <p><strong>GitHub:</strong> <a href="https://github.com/AntonioGR00" target="_blank" rel="noopener noreferrer">github.com/AntonioGR00</a></p>
           <form class="contact-form" id="contactForm">
             <input type="text" id="name" data-i18n-placeholder="contact.namePlaceholder" placeholder="Nombre" required />
             <input type="email" id="email" data-i18n-placeholder="contact.emailPlaceholder" placeholder="Email" required />
@@ -103,41 +108,10 @@
         </section>
       </section>
 
-      <!-- PÁGINA 3: CREACIÓN DE CONTENIDO -->
-      <section class="page page-3" id="page3">
-        <section class="content-creation">
-          <h2 data-i18n="content.title">Contenido de Programación</h2>
-          <div class="content-section">
-            <h3 data-i18n="content.blogTitle">Videos del canal</h3>
-            <ul>
-              <li><a href="#" data-i18n="content.article1">Video: Tutorial React</a></li>
-              <li><a href="#" data-i18n="content.article2">Video: Python Avanzado</a></li>
-              <li><a href="#" data-i18n="content.article3">Video: Web Development</a></li>
-            </ul>
-          </div>
-          <div class="content-section">
-            <h3 data-i18n="content.socialTitle">Redes Sociales</h3>
-            <ul>
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">LinkedIn</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">YouTube</a></li>
-            </ul>
-          </div>
-          <div class="content-section">
-            <h3 data-i18n="content.resourcesTitle">Recursos</h3>
-            <ul>
-              <li><a href="#" data-i18n="content.resource1">Documentación</a></li>
-              <li><a href="#" data-i18n="content.resource2">Código en GitHub</a></li>
-              <li><a href="#" data-i18n="content.resource3">Portafolio Adicional</a></li>
-            </ul>
-          </div>
-        </section>
-      </section>
     </div>
 
-    <button id="nextBtn" class="nav-btn nav-btn-right" aria-label="Ir a Creación de contenido">
-      <span class="label" data-i18n="nav.content">Creación de contenido</span>
+    <button id="nextBtn" class="nav-btn nav-btn-right" aria-label="Ir a Proyectos y contacto">
+      <span class="label" data-i18n="nav.projects">Proyectos y contacto</span>
       <span class="arrow">→</span>
     </button>
   </div>
@@ -147,6 +121,6 @@
     <p data-i18n="footer.rights">© 2026 AGR00. Todos los derechos reservados.</p>
   </footer>
 
-  <script src="main.js"></script>
+  <script type="module" src="main.js"></script>
 </body>
 </html>

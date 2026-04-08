@@ -1,23 +1,30 @@
 {
   "name": "portfolio-antonio-gross-rivero",
   "version": "1.0.0",
+  "private": true,
   "main": "index.js",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AntonioGR00/portfolio-antonio-rivero.git"
+    "url": "git+https://github.com/AntonioGR00/Portfolio-AGR00.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AntonioGR00/portfolio-antonio-rivero/issues"
+    "url": "https://github.com/AntonioGR00/Portfolio-AGR00/issues"
   },
-  "homepage": "https://github.com/AntonioGR00/portfolio-antonio-rivero#readme",
+  "homepage": "https://github.com/AntonioGR00/Portfolio-AGR00#readme",
   "description": "",
   "dependencies": {
     "@emailjs/browser": "^4.4.1"
+  },
+  "devDependencies": {
+    "vite": "^5.4.19"
   }
 }

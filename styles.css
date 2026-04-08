@@ -112,6 +112,15 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.profile-section a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.profile-section a:hover {
+  color: #2dd4bf;
+}
+
 .skills-list {
   list-style: none;
   display: flex;
@@ -162,6 +171,21 @@ body {
   gap: 1rem;
 }
 
+.github-profile-btn {
+  display: inline-block;
+  margin-top: 1.25rem;
+  padding: 0.65rem 1rem;
+  border-radius: 6px;
+  background: #38bdf8;
+  color: #020617;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.github-profile-btn:hover {
+  background: #2dd4bf;
+}
+
 .project-card {
   background: #1e293b;
   padding: 1.5rem;
@@ -172,6 +196,18 @@ body {
 .project-card h3 {
   color: #38bdf8;
   margin-bottom: 0.5rem;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 0.6rem;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-card a:hover {
+  color: #2dd4bf;
 }
 
 .contact-section {
@@ -315,6 +351,11 @@ body {
   background: #020617;
   color: #38bdf8;
   transform: scale(1);
+}
+
+.nav-btn.is-hidden {
+  visibility: hidden;
+  pointer-events: none;
 }
 
 /* FOOTER */

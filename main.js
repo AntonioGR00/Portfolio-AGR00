@@ -1,5 +1,9 @@
+import emailjs from "@emailjs/browser";
+
 // EmailJS Initialization
-emailjs.init("MbnpcM3OeBN-ik_v8");
+emailjs.init({
+  publicKey: "MbnpcM3OeBN-ik_v8"
+});
 
 let currentPage = 2;
 const savedLanguage = localStorage.getItem("portfolioLanguage") || "es";
@@ -17,12 +21,11 @@ const translations = {
   es: {
     nav: {
       personal: "Información personal",
-      content: "Creación de contenido"
+      projects: "Proyectos y contacto"
     },
     navDestinations: {
       1: "Información personal",
-      2: "Proyectos y contacto",
-      3: "Creación de contenido"
+      2: "Proyectos y contacto"
     },
     about: {
       title: "Sobre mí",
@@ -42,10 +45,13 @@ const translations = {
     },
     projects: {
       title: "Proyectos & Empresas",
-      project1Title: "Proyecto 1",
-      project2Title: "Proyecto 2",
-      project3Title: "Proyecto 3",
-      projectDesc: "Descripción breve del proyecto."
+      project1Title: "TaskManager",
+      project1Desc: "App Android minimalista para gestionar tareas con CRUD, SQLite y recordatorios inteligentes.",
+      project2Title: "Learning",
+      project2Desc: "Plataforma escolar full-stack con Next.js, NestJS, Prisma, PostgreSQL y mensajería en tiempo real.",
+      project3Title: "PubtoGo",
+      project3Desc: "Proyecto orientado a servicios y experiencias digitales, disponible en tu perfil de GitHub.",
+      viewAllGithub: "Ver todos en GitHub"
     },
     contact: {
       title: "Contacto",
@@ -55,18 +61,6 @@ const translations = {
       submit: "Enviar",
       success: "¡Mensaje enviado exitosamente!"
     },
-    content: {
-      title: "Contenido de Programación",
-      blogTitle: "Videos del canal",
-      article1: "Video: Tutorial React",
-      article2: "Video: Python Avanzado",
-      article3: "Video: Web Development",
-      socialTitle: "Redes Sociales",
-      resourcesTitle: "Recursos",
-      resource1: "Documentación",
-      resource2: "Código en GitHub",
-      resource3: "Portafolio Adicional"
-    },
     footer: {
       rights: "© 2026 AGR00. Todos los derechos reservados."
     }
@@ -74,12 +68,11 @@ const translations = {
   en: {
     nav: {
       personal: "Personal information",
-      content: "Content creation"
+      projects: "Projects and contact"
     },
     navDestinations: {
       1: "Personal information",
-      2: "Projects and contact",
-      3: "Content creation"
+      2: "Projects and contact"
     },
     about: {
       title: "About me",
@@ -99,10 +92,13 @@ const translations = {
     },
     projects: {
       title: "Projects & Companies",
-      project1Title: "Project 1",
-      project2Title: "Project 2",
-      project3Title: "Project 3",
-      projectDesc: "Short project description."
+      project1Title: "TaskManager",
+      project1Desc: "Minimalist Android app to manage tasks with CRUD, SQLite, and smart reminders.",
+      project2Title: "Learning",
+      project2Desc: "Full-stack school platform with Next.js, NestJS, Prisma, PostgreSQL, and real-time messaging.",
+      project3Title: "PubtoGo",
+      project3Desc: "Project focused on services and digital experiences, available on your GitHub profile.",
+      viewAllGithub: "View all on GitHub"
     },
     contact: {
       title: "Contact",
@@ -111,18 +107,6 @@ const translations = {
       messagePlaceholder: "Message",
       submit: "Send",
       success: "Message sent successfully!"
-    },
-    content: {
-      title: "Programming Content",
-      blogTitle: "Channel Videos",
-      article1: "Video: React Tutorial",
-      article2: "Video: Advanced Python",
-      article3: "Video: Web Development",
-      socialTitle: "Social Networks",
-      resourcesTitle: "Resources",
-      resource1: "Documentation",
-      resource2: "Code on GitHub",
-      resource3: "Additional Portfolio"
     },
     footer: {
       rights: "© 2026 AGR00. All rights reserved."
@@ -172,12 +156,17 @@ function changePage(pageNum) {
     targetPage.classList.add("active");
   }
 
-  prevBtn.disabled = pageNum === 1;
-  nextBtn.disabled = pageNum === 3;
+  const isFirstPage = pageNum === 1;
+  const isLastPage = pageNum === 2;
+
+  prevBtn.disabled = isFirstPage;
+  nextBtn.disabled = isLastPage;
+  prevBtn.classList.toggle("is-hidden", isFirstPage);
+  nextBtn.classList.toggle("is-hidden", isLastPage);
 
   const pageNames = translations[currentLanguage].navDestinations;
-  const prevDestination = pageNames[pageNum - 1] || pageNames[1];
-  const nextDestination = pageNames[pageNum + 1] || pageNames[3];
+  const prevDestination = pageNames[pageNum - 1] || "";
+  const nextDestination = pageNames[pageNum + 1] || "";
 
   if (prevLabel) {
     prevLabel.textContent = prevDestination;
@@ -188,8 +177,8 @@ function changePage(pageNum) {
   }
 
   const goToText = currentLanguage === "es" ? "Ir a" : "Go to";
-  prevBtn.setAttribute("aria-label", `${goToText} ${prevDestination}`);
-  nextBtn.setAttribute("aria-label", `${goToText} ${nextDestination}`);
+  prevBtn.setAttribute("aria-label", prevDestination ? `${goToText} ${prevDestination}` : "");
+  nextBtn.setAttribute("aria-label", nextDestination ? `${goToText} ${nextDestination}` : "");
 }
 
 prevBtn.addEventListener("click", () => {
@@ -200,7 +189,7 @@ prevBtn.addEventListener("click", () => {
 });
 
 nextBtn.addEventListener("click", () => {
-  if (currentPage < 3) {
+  if (currentPage < 2) {
     currentPage++;
     changePage(currentPage);
   }
