@@ -5,7 +5,7 @@ emailjs.init({
   publicKey: "MbnpcM3OeBN-ik_v8"
 });
 
-let currentPage = 2;
+let currentPage = 1;
 const savedLanguage = localStorage.getItem("portfolioLanguage") || "es";
 let currentLanguage = savedLanguage;
 
