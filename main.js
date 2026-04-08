@@ -36,7 +36,7 @@ const translations = {
       locationLabel: "Ubicación:",
       locationValue: "Cádiz, Andalucía, España",
       bioTitle: "Biografía",
-      bioText: "¡Hola! Soy Antonio Gross Rivero, desarrollador freelance de software, actualmente enfocado en seguir creciendo profesionalmente mientras construyo proyectos propios y colaboro en soluciones digitales a medida.<br><br>En los últimos meses he centrado mi trabajo en reforzar mis habilidades técnicas, desarrollar aplicaciones reales y crear contenido educativo sobre programación, donde comparto conocimientos, procesos y aprendizajes de forma constante.<br><br>Me apasiona crear productos funcionales, bien estructurados y pensados para aportar valor real, combinando desarrollo, aprendizaje continuo y divulgación técnica.<br><br><strong>¡Nunca dejes de programar!</strong>",
+      bioText: "¡Hola! Soy Antonio Gross Rivero, desarrollador de aplicaciones y páginas web. Llevo meses trabajando en proyectos propios mientras busco mi primera experiencia laboral.<br><br>Busco adquirir experiencia en el sector y ampliar mis conocimientos.",
       skillsTitle: "Habilidades"
     },
     hero: {
@@ -83,7 +83,7 @@ const translations = {
       locationLabel: "Location:",
       locationValue: "Cadiz, Andalusia, Spain",
       bioTitle: "Biography",
-      bioText: "Hi! I'm Antonio Gross Rivero, a freelance software developer currently focused on continuing to grow professionally while building my own projects and collaborating on tailored digital solutions.<br><br>In recent months, I have focused my work on strengthening my technical skills, developing real applications, and creating educational programming content where I consistently share knowledge, processes, and lessons learned.<br><br>I am passionate about creating functional, well-structured products designed to deliver real value by combining development, continuous learning, and technical outreach.<br><br><strong>Never stop coding!</strong>",
+      bioText: "Hi! I'm Antonio Gross Rivero, an applications and web developer. I have been working on my own projects for months while looking for my first professional opportunity.<br><br>I am seeking to gain experience in the sector and expand my knowledge.",
       skillsTitle: "Skills"
     },
     hero: {
