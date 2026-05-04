@@ -1,13 +1,22 @@
-import emailjs from "@emailjs/browser";
+let emailjsClient = null;
 
-// EmailJS Initialization
-emailjs.init({
-  publicKey: "MbnpcM3OeBN-ik_v8"
-});
+async function initEmailJs() {
+  try {
+    const module = await import("@emailjs/browser");
+    emailjsClient = module.default;
+    emailjsClient.init({
+      publicKey: "MbnpcM3OeBN-ik_v8"
+    });
+  } catch (error) {
+    console.warn("EmailJS is not available. Contact form email sending is disabled.", error);
+  }
+}
 
 let currentPage = 1;
 const savedLanguage = localStorage.getItem("portfolioLanguage") || "es";
 let currentLanguage = savedLanguage;
+const pages = Array.from(document.querySelectorAll(".page"));
+const totalPages = pages.length;
 
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
@@ -147,26 +156,37 @@ function applyTranslations() {
 }
 
 function changePage(pageNum) {
-  document.querySelectorAll(".page").forEach((page) => {
+  if (!totalPages) {
+    return;
+  }
+
+  currentPage = Math.max(1, Math.min(pageNum, totalPages));
+
+  pages.forEach((page) => {
     page.classList.remove("active");
   });
 
-  const targetPage = document.getElementById(`page${pageNum}`);
+  const targetPage = document.getElementById(`page${currentPage}`);
   if (targetPage) {
     targetPage.classList.add("active");
   }
 
-  const isFirstPage = pageNum === 1;
-  const isLastPage = pageNum === 2;
+  const isFirstPage = currentPage === 1;
+  const isLastPage = currentPage === totalPages;
 
-  prevBtn.disabled = isFirstPage;
-  nextBtn.disabled = isLastPage;
-  prevBtn.classList.toggle("is-hidden", isFirstPage);
-  nextBtn.classList.toggle("is-hidden", isLastPage);
+  if (prevBtn) {
+    prevBtn.disabled = isFirstPage;
+    prevBtn.classList.toggle("is-hidden", isFirstPage);
+  }
+
+  if (nextBtn) {
+    nextBtn.disabled = isLastPage;
+    nextBtn.classList.toggle("is-hidden", isLastPage);
+  }
 
   const pageNames = translations[currentLanguage].navDestinations;
-  const prevDestination = pageNames[pageNum - 1] || "";
-  const nextDestination = pageNames[pageNum + 1] || "";
+  const prevDestination = pageNames[currentPage - 1] || "";
+  const nextDestination = pageNames[currentPage + 1] || "";
 
   if (prevLabel) {
     prevLabel.textContent = prevDestination;
@@ -177,23 +197,30 @@ function changePage(pageNum) {
   }
 
   const goToText = currentLanguage === "es" ? "Ir a" : "Go to";
-  prevBtn.setAttribute("aria-label", prevDestination ? `${goToText} ${prevDestination}` : "");
-  nextBtn.setAttribute("aria-label", nextDestination ? `${goToText} ${nextDestination}` : "");
+  if (prevBtn) {
+    prevBtn.setAttribute("aria-label", prevDestination ? `${goToText} ${prevDestination}` : "");
+  }
+
+  if (nextBtn) {
+    nextBtn.setAttribute("aria-label", nextDestination ? `${goToText} ${nextDestination}` : "");
+  }
 }
 
-prevBtn.addEventListener("click", () => {
-  if (currentPage > 1) {
-    currentPage--;
-    changePage(currentPage);
-  }
-});
+if (prevBtn) {
+  prevBtn.addEventListener("click", () => {
+    if (currentPage > 1) {
+      changePage(currentPage - 1);
+    }
+  });
+}
 
-nextBtn.addEventListener("click", () => {
-  if (currentPage < 2) {
-    currentPage++;
-    changePage(currentPage);
-  }
-});
+if (nextBtn) {
+  nextBtn.addEventListener("click", () => {
+    if (currentPage < totalPages) {
+      changePage(currentPage + 1);
+    }
+  });
+}
 
 if (languageSelect) {
   languageSelect.value = currentLanguage;
@@ -207,6 +234,7 @@ if (languageSelect) {
 
 applyTranslations();
 changePage(currentPage);
+initEmailJs();
 
 if (contactForm) {
   contactForm.addEventListener("submit", function (event) {
@@ -247,9 +275,18 @@ if (contactForm) {
     };
 
     // Send both emails
+    if (!emailjsClient) {
+      statusMsg.textContent =
+        currentLanguage === "es"
+          ? "El servicio de correo no está disponible ahora mismo."
+          : "Email service is currently unavailable.";
+      statusMsg.style.color = "red";
+      return;
+    }
+
     Promise.all([
-      emailjs.send("service_18r81hu", "template_2qejkar", contactUsParams),
-      emailjs.send("service_18r81hu", "template_jt9nevb", autoReplyParams)
+      emailjsClient.send("service_18r81hu", "template_2qejkar", contactUsParams),
+      emailjsClient.send("service_18r81hu", "template_jt9nevb", autoReplyParams)
     ])
       .then(() => {
         statusMsg.textContent = translations[currentLanguage].contact.success;
