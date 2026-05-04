@@ -50,7 +50,7 @@ const translations = {
       project2Title: "Learning",
       project2Desc: "Plataforma escolar full-stack con Next.js, NestJS, Prisma, PostgreSQL y mensajería en tiempo real.",
       project3Title: "PubtoGo",
-      project3Desc: "Proyecto orientado a servicios y experiencias digitales, disponible en tu perfil de GitHub.",
+      project3Desc: "Proyecto orientado al ocio nocturno y aforo de distintos locales.",
       viewAllGithub: "Ver todos en GitHub"
     },
     contact: {
@@ -97,7 +97,7 @@ const translations = {
       project2Title: "Learning",
       project2Desc: "Full-stack school platform with Next.js, NestJS, Prisma, PostgreSQL, and real-time messaging.",
       project3Title: "PubtoGo",
-      project3Desc: "Project focused on services and digital experiences, available on your GitHub profile.",
+      project3Desc: "Project focused on nightlife and capacity management for various venues.",
       viewAllGithub: "View all on GitHub"
     },
     contact: {
