@@ -45,7 +45,7 @@ const translations = {
       locationLabel: "Ubicación:",
       locationValue: "Cádiz, Andalucía, España",
       bioTitle: "Biografía",
-      bioText: "¡Hola! Soy Antonio Gross Rivero, desarrollador de aplicaciones y páginas web. Llevo meses trabajando en proyectos propios mientras busco mi primera experiencia laboral.<br><br>Busco adquirir experiencia en el sector y ampliar mis conocimientos.",
+      bioText: "¡Hola! Soy Antonio Gross Rivero, desarrollador de aplicaciones y páginas web. Estoy buscando proyectos que me apasionen y un equipo de trabajo donde convertirme en un referente en el sector.",
       skillsTitle: "Habilidades"
     },
     hero: {
@@ -92,7 +92,7 @@ const translations = {
       locationLabel: "Location:",
       locationValue: "Cadiz, Andalusia, Spain",
       bioTitle: "Biography",
-      bioText: "Hi! I'm Antonio Gross Rivero, an applications and web developer. I have been working on my own projects for months while looking for my first professional opportunity.<br><br>I am seeking to gain experience in the sector and expand my knowledge.",
+      bioText: "Hi! I'm Antonio Gross Rivero, an applications and web developer. I am looking for projects I'm passionate about and a team where I can grow into a recognized professional in the industry.",
       skillsTitle: "Skills"
     },
     hero: {
