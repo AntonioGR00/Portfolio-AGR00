@@ -53,7 +53,7 @@ const translations = {
       subtitle: "Desarrollador Aplicaciones Multiplataforma / Web / Software / Diseñador"
     },
     projects: {
-      title: "Proyectos & Empresas",
+      title: "Proyectos",
       project1Title: "TaskManager",
       project1Desc: "App Android minimalista para gestionar tareas con CRUD, SQLite y recordatorios inteligentes.",
       project2Title: "Learning",
@@ -100,7 +100,7 @@ const translations = {
       subtitle: "Multiplatform App / Web / Software Developer / Designer"
     },
     projects: {
-      title: "Projects & Companies",
+      title: "Projects",
       project1Title: "TaskManager",
       project1Desc: "Minimalist Android app to manage tasks with CRUD, SQLite, and smart reminders.",
       project2Title: "Learning",
